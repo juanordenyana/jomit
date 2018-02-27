@@ -1,8 +1,13 @@
 pipeline {
+    agent {
+        node{
+            label 'principal'
+        }
+    }
     stages {
-        stage('Build') { 3
+        stage('Build') { 
             steps {
-                cmd 'mvn -B -DskipTests clean package' 4
+                cmd 'mvn -B -DskipTests clean package'
             }
         }
     }
