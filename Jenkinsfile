@@ -5,7 +5,7 @@ pipeline {
         }
     }
     environment {
-        PATH = "$pwd()/AAA"
+        PATH = "$PATH/AAA"
     }
     stages {
         stage('Build') {
