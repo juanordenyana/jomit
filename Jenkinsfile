@@ -4,6 +4,9 @@ pipeline {
             label 'principal'
         }
     }
+    environment {
+        PATH = "$pwd()/AAA"
+    }
     stages {
         stage('Build') {
             steps {
