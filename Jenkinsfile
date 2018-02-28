@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo(pwd())
+                dir(pwd()+'/AAA')
                 bat 'mvn -B -DskipTests clean package'
             }
         }
