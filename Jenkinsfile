@@ -15,7 +15,7 @@ pipeline {
         stage('Deploy'){
             steps{
                 dir(pwd()+'\\AAA'){
-                    bat 'mvn deploy -DaltDeploymentRepository=jomit::default::http://localhost:9091'
+                    bat 'mvn deploy -DaltDeploymentRepository=jomit::default::http://localhost:9091/repository/jomit/'
                 }
             }
        }
