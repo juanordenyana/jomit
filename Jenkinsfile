@@ -15,7 +15,7 @@ pipeline {
         stage('Deploy'){
             steps{
                 dir(pwd()+'\\AAA'){
-                    bat 'mvn deploy -DrepositoryId=jomit -Durl=http://localhost:9091'
+                    bat 'mvn deploy -DaltDeploymentRepository=jomit::layout::http://localhost:9091'
                 }
             }
        }
