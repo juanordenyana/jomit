@@ -12,5 +12,12 @@ pipeline {
                 }
             }
         }
+        stage('Deploy'){
+            steps{
+                dir(pwd()+'\\AAA'){
+                    bat 'mvn deploy'
+                }
+            }
+       }
     }
 }
