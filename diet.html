@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>dieta</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+		<script>
+		var contFood = 1;
+		var contFoodValues = 1;
+		
+		 function populateFoodTable(idx) {
+		 
+			html =$("#tfood").html();
+			html+='<tr id="myTableRow'+idx+'"><td><input type="text" name="ffood'+idx+'"></td><td><input type="text" name="fweight'+idx+'"></td><td><input type="text" name="fprotein'+idx+'"></td><td><input type="button" name="fremove'+idx+'" value="-" onclick="removeRow('+idx+')"></td></tr>';
+			$("#tfood").html(html);
+			contFood++;
+		 }
+		 
+		 function removeRow(idx) {
+			$('#myTableRow'+idx).remove();
+		 }
+		 
+		 function populateFoodValuesTable(idx) {
+		 
+			html =$("#tfoodvalues").html();
+			html+='<tr id="myTableValuesRow'+idx+'"><td><input type="text" name="ffoodvalue'+idx+'"></td><td><input type="text" name="fproteinvalue'+idx+'"></td><td><input type="button" name="fremovevalue'+idx+'" value="-" onclick="removeValueRow('+idx+')"></td></tr>';
+			$("#tfoodvalues").html(html);
+			contFoodValues++;
+		 }
+		 
+		 function removeValueRow(idx) {
+			$('#myTableValuesRow'+idx).remove();
+		 }
+		</script>
+	</head>
+	<body onload="populateFoodTable(1);populateFoodValuesTable(1);">
+	
+	<p>
+		<table>
+			<tr>
+				<td>
+					<table>
+						<thead>
+							<tr>
+								<th>food</th><th>weight</th><th>protein</th><th></th>
+							</tr>
+						</thead>
+						<tbody id="tfood">
+						</tbody>
+					</table>
+					<input type="button" name="addFood" value="add food" onclick="populateFoodTable(contFood)">
+				</td>
+				<td>
+					<table>
+						<thead>
+							<tr>
+								<th>food</th><th>protein in 100 grams</th><th></th>
+							</tr>
+						</thead>
+						<tbody id="tfoodvalues">
+						</tbody>
+					</table>
+					<input type="button" name="addFoodValues" value="add food values" onclick="populateFoodValuesTable(contFoodValues)">
+				</td>
+			</tr>
+		<table>
+	</p>
+	</body>
+</html>
